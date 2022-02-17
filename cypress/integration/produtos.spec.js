@@ -14,7 +14,7 @@ describe("Funcionalidade Página de Produtos", () => {
       .click();
   });
 
-  it.only("Deve adicionar um produto no carrinho", () => {
+  it("Deve adicionar um produto no carrinho", () => {
     var quantidade = 5
 
     cy.get('[class="product-block grid"]')
@@ -26,5 +26,13 @@ describe("Funcionalidade Página de Produtos", () => {
 
     cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
     cy.get('.woocommerce-message').should('contain', quantidade + ' × “Ariel Roll Sleeve Sweatshirt” foram adicionados no seu carrinho.')
+  });
+
+  it('Deve adicionar produtos ao carrinho usando comando customizado', () => {
+    cy.addProdutos('Ariel Roll Sleeve Sweatshirt', 'XS', 'Red', 3)
+  });
+
+  it('Deve adicionar produtos ao carrinho usando comando customizado', () => {
+    cy.addProdutos('Argus All-Weather Tank', 'XS', 'Gray', 7)
   });
 });
