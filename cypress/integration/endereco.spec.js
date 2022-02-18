@@ -49,4 +49,19 @@ describe("Funcionalidade endereços - Faturamento e Entrega", () => {
       "Endereço alterado com sucesso."
     );
   });
+
+  it('Deve fazer cadastro de entrega com sucesso - Usando arquivo de dados', () => {
+      EnderecoPage.editarEnderecoEntrega(
+          dadosEndereco[3].nome,
+          dadosEndereco[3].sobrenome,
+          dadosEndereco[3].empresa,
+          dadosEndereco[3].pais,
+          dadosEndereco[3].endereco,
+          dadosEndereco[3].numero,
+          dadosEndereco[3].cidade,
+          dadosEndereco[3].estado,
+          dadosEndereco[3].cep
+
+      )
+  });
 });
